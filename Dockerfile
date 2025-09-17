@@ -14,11 +14,9 @@ RUN tlmgr update --self --all
 ##  # disables future backups, removes all existing backups
 RUN tlmgr option -- autobackup 0 && tlmgr backup --clean --all
 
-
 # Expose default ShareLaTeX port (optional, inherited from base image)
 EXPOSE 80
 
-USER sharelatex
 # (Optional) set entrypoint/cmd if you need to override base behavior
 # CMD ["run"]
 
