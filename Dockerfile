@@ -5,11 +5,10 @@ FROM ghcr.io/cuhk-haosun/sharelatex-base:main
 USER root
 
 # Update tlmgr and install required TeX Live packages
-RUN tlmgr update --self --all && \
-    tlmgr install \
-      titlesec enumitem multirow textpos adjustbox \
-      siunitx caption subcaption float booktabs \
-      tikz hyperref fancyhdr      
+RUN tlmgr update --self --all
+    # tlmgr install \
+    #   titlesec enumitem multirow textpos adjustbox \
+    #   siunitx caption subcaption float booktabs 
 
 # (Optional) Clean up tlmgr caches to reduce image size
 ##  # disables future backups, removes all existing backups
